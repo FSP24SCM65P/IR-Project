@@ -35,5 +35,5 @@ settings = Settings({
 
 if __name__ == "__main__":
     process = CrawlerProcess(settings=settings)
-    process.crawl(MySpider, start_url='https://example.com', max_pages=100, max_depth=3)
+    process.crawl(MySpider, start_url='https://en.wikipedia.org/wiki/Main_Page', max_pages=10, max_depth=3)
     process.start()
