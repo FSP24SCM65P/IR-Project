@@ -39,23 +39,18 @@ def construct_inverted_index(documents, vectorizer):
 
 if __name__ == "__main__":
     html_folder = "../crawler/"
-    json_folder = html_folder  # Save JSON files in the same folder as HTML files
+    json_folder = html_folder  
     if not os.path.exists(json_folder):
         os.makedirs(json_folder)
     
-    # Step 1: Read HTML files and extract text content
     documents = read_html_files(html_folder)
     
-    # Step 2: Convert text content to JSON format
     convert_to_json(documents, json_folder)
     
-    # Step 3: Index documents using TF-IDF
     X, vectorizer = index_documents(documents)
     
-    # Step 4: Construct inverted index
     inverted_index = construct_inverted_index(documents, vectorizer)
     
-    # Optionally, print or save the inverted index
     print("Inverted Index:")
     for term, document_ids in inverted_index.items():
         print(f"{term}: {document_ids}")
