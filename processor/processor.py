@@ -54,7 +54,6 @@ def search():
 
     corrected_query = check_spelling_and_expand(query)
 
-    # Change '../crawler/' to the path where your JSON files are located
     documents = read_json_files('../crawler/')
     
     tfidf_vectorizer = TfidfVectorizer()
